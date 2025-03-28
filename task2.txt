@@ -1,0 +1,82 @@
+#include<stdio.h>//Preprocessor
+#include<conio.h>//console input output header file
+void main(){//body of the function
+
+   int candyX=40,candyY=5,boxX=40,boxY=13,score=0,lifeline=3,d;
+   char ch;
+   textbackground(BLACK);
+   start:
+   clrscr();
+   gotoxy(60,5);
+   cprintf("SCORE=%d",score);
+   gotoxy(60,6);
+   cprintf( "LIFELINE =%d",lifeline);
+   gotoxy(candyX,candyY);
+   textcolor(GREEN);
+   cprintf("0");
+   gotoxy(candyX+5,candyY);
+   textcolor(BLUE);
+   cprintf("0");
+   gotoxy(boxX,boxY);
+   cprintf("#");
+   gotoxy(boxX+7,boxY);
+   cprintf("#");
+   gotoxy(boxX,boxY+1);
+   cprintf("########");
+   if(kbhit()){
+	 ch=getch();
+	 switch(ch){
+	      case  'A' : if(boxX>1){
+			  boxX--;
+			    }
+			    break;
+	     case 'a' :if (boxX>1){
+			boxX--;
+			}
+			break;
+	     case 'D' :if(boxX<73){
+		       boxX=boxX+2;
+		       }
+		       break;
+	     case 'd' : if(boxX<73){
+			boxX=boxX+2;
+			}
+			break;
+	     case 'x':exit(0);
+	     case 'X':exit(0);
+	     }//end of switch
+
+	 }//end of if
+	    candyY++;
+	    if(candyY==13){
+	       d=candyX-boxX;
+	       if(d>=1  && d<=6){
+		 score++;
+
+		 }else{
+		 lifeline--;
+		 if(lifeline==0){
+		      clrscr();
+		      gotoxy(40,13);
+		      textcolor(RED);
+		      cprintf(" GAME IS OVER");
+		      getch();
+		     exit(0);
+
+
+	    }
+	    }
+
+	       candyY=1;
+	       sound(200);
+	       delay(400);
+	       nosound();
+	       candyX=rand()%80+1;
+	       }
+	       delay(400);
+	       goto start;
+
+
+	       getch();
+
+	       }//end of main
