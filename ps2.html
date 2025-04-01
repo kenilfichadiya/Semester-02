@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice set</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .progress {
+            height: 3px;
+            background-color: red;
+            animation: load 2s ease-in-out 2;
+        }
+
+        header {
+            height: 122px;
+            background-color: black;
+        }
+
+        main {
+            height: 899px;
+            background-color: blue;
+        }
+
+
+
+        .slider {
+            background-color: aqua;
+            width: 300vw;
+            height: 600px;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        @keyframes load {
+            0% {
+                width: 0;
+            }
+
+            50% {
+                width: 60vw;
+            }
+
+            100% {
+                width: 100vw;
+            }
+
+        }
+
+        .img1 {
+            transform: translate(0vw);
+            animation: slide1 3s 2s forwards;
+        }
+
+        .img2 {
+            transform: translate(30vw);
+        }
+
+        .img3 {
+            transform: translate(30vw);
+        }
+
+        @keyframes slide1 {
+            0% {
+                transform: translate(-8vw);
+            }
+
+            100% {
+                transform: translate(85vw);
+            }
+        }
+
+        @keyframes slide2 {
+            0% {
+                transform: translate(0vw);
+            }
+
+            100% {
+                transform: translate(92vw);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress">progress</div>
+    <header>
+
+    </header>
+    <main>
+        <div class="slider">
+            <img class="img1" src="https://source.unsplash.com/1600x900/?nature,water">
+            <img class="img2" src="https://source.unsplash.com/user/traceofwind/likes/1600x900">
+            <img class="img3" src="https://source.unsplash.com/collection/190727/1600x900">
+        </div>
+    </main>
+
+</body>
+<script></script>
+
+</html>

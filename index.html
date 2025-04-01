@@ -5,32 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- <style>
-        /* we target id with #, and class with . */
-        #first {
-            background-color: aqua;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
         }
 
-        .bg-blue {
-            background-color: green;
+        .container {
+            background-color: red;
+            height: 450px;
         }
-    </style> -->
+
+        .box {
+
+            width: 45px;
+            height: 50px;
+            /* border: 2px solid black; */
+            /* transform-origin: 0;
+            transform: translate(134px, 56px); */
+            /* transform: translate(34px, 34px) rotate(0.5turn); */
+            /* transform: scale(2, 4); */
+            /* transform: scaleX(4); */
+            /* transform: scaleY(4); */
+            /* transform: skew(4deg, 6deg); */
+        }
+
+        img:hover {
+            width: 76px;
+        }
+
+        img {
+            width: 546px;
+            transition-property: width;
+            transition-duration: 3s;
+            transition-timing-function: ease-in;
+        }
+
+        /* img hover means , it will take maximum width till the number we have entered , here it is 56px */
+    </style>
+
 </head>
 
 <body>
-    <!-- <div id="first" style="background-color: blue;">
-        first
-    </div> -->
-    <div id="second">
-        second
+    <div class="container">
+        <div class="box">
+
+            <img id="myImage" src="https://source.unsplash.com/600x300/?nature,water">
+            <button id="btn">Toggle</button>
+        </div>
     </div>
-    <section class="red">
-        red
-    </section>
-    <section class="red bg-blue border-purple">
-        red bg-blue border-purple
-    </section>
+
 </body>
+<script>
+    btn.addEveneyListner("click", () => {
+        if (myImage.style.width = "546px") {
+            myImage.style.width = "146px";
+        }
+        else if (myImage.style.width === "146px") {
+            myImage.style.width = "546px";
+        }
+    })
+
+</script>
 
 </html>
